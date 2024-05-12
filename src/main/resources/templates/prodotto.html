@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Riepilogo del prodotto</h1>
+    <table class="table col-8" th:object="${prodotto}">
+        <tr>
+            <th>Codice</th><td th:text="${prodotto.codice}"></td>
+        </tr>
+        <tr>
+            <th>Nome</th><td th:text="${prodotto.nome}"></td>
+        </tr>
+        <tr>
+            <th>Categoria</th><td th:text="${prodotto.categoria}"></td>
+        </tr>
+        <tr>
+            <th>Anno Produzione</th><td th:text="${prodotto.anno_produzione}"></td>
+        </tr>
+        <tr> 
+            <th>Quantità</th><td th:text="${prodotto.quantita}"></td>
+        </tr>
+    </table>
+
+    <div>
+        <a th:href="@{/catalogo}" class="btn btn-primary">Home</a>
+        <a th:href="@{'/catalogo?delete='+${prodotto.codice}}" class="btn btn-danger">Elimina</a>
+        <a th:href="@{/catalogo/aggiorna?codice}+'='+${prodotto.codice}" class="btn btn-success">Modifica</a>
+    </div>
+</body>
+</html>
