@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Utente</title>
+</head>
+<body>
+    <h1 th:object="${utenteForm}">Dati di <span th:text="${utenteForm.nickname}"></span></h1>
+    <table th:object="${utenteForm}">
+        <tr>
+            <th>Nickname</th>
+            <td th:text="${utenteForm.nickname}"></td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td th:text="${utenteForm.password}"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td th:text="${(utenteForm.email==null ? '(empty)':utenteForm.email)}"></td>
+        </tr>
+    </table>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+        }
+        table *{
+            text-align: start;
+        }
+        td{
+            padding-left: 10px;
+        }
+    </style>
+</body>
+</html>

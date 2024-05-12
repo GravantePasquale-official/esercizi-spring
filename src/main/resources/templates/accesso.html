@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Accesso</title>
+</head>
+<body>
+    <h1>Pagina di Accesso</h1>
+    <form th:action="@{/utente}" method="post" th:object="${utenteForm}">
+        Nickname
+        <input type="text" th:field="*{nickname}">
+        
+        Password
+        <input type="password" th:field="*{password}">
+        <button type="submit">Invia</button>
+    </form>
+</body>
+</html>
